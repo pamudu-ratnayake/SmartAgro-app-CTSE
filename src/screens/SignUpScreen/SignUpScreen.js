@@ -29,8 +29,6 @@ const SignUpScreen = () => {
     if (password === conPassword) {
       createUserWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
-          console.log('user is ==>', userCredential.user);
-          // Signed in successfully
           navigation.navigate('SignIn');
         })
         .catch(error => {
@@ -46,7 +44,7 @@ const SignUpScreen = () => {
       <Image source={name} style={[styles.name]} resizeMode="contain" />
 
       <View style={styles.container}>
-        <TextInput
+        <TextInput 
           placeholder="Email Address"
           style={styles.input}
           onChangeText={text => setEmail(text)}

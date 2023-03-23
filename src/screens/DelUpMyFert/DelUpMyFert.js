@@ -35,54 +35,56 @@ const DelUpMyFert = ({route}) => {
     remove(nodeRef)
       .then(() => {
         console.log('Data removed successfully');
-        navigation.navigate("MyFert");
+        navigation.navigate('MyFert');
       })
       .catch(error => {
         console.error('Error removing data: ', error);
       });
   };
 
-  //Flatlist should be implemented
-
   return (
     <View>
       <CustomHeader></CustomHeader>
       <View>
-        <Text style={styles.text}>My Fertilizers</Text>
+        <Text style={styles.text}>My Fertilizers</Text> 
       </View>
 
       <ScrollView
-            contentContainerStyle={{
-              paddingBottom: 150
-            }}
-            style={styles.new3}
-          >
+        contentContainerStyle={{
+          paddingBottom: 150,
+        }}
+        style={styles.new3}>
+        <View style={styles.column}>
+          <Pressable style={styles.container}>
+            <Text style={styles.txt}>
+              Crop Name: {fertilizeDetails.cropName}
+            </Text>
+            <Text style={styles.txt}>
+              Fertilizer Name: {fertilizeDetails.fertilizerName}
+            </Text>
+            <Text style={styles.txt}>
+              Fertilizer Type: {fertilizeDetails.fertilizerType}
+            </Text>
+            <Text style={styles.txt}>
+              Fertilized Area: {fertilizeDetails.fertilizedArea}
+            </Text>
+            <Text style={styles.txt}>
+              Fertilized Date: {fertilizeDetails.fertilizedDate}
+            </Text>
 
-      <View style={styles.column}>
-        <Pressable style={styles.container}>
-          <Text style={styles.txt}>Crop Name: {fertilizeDetails.cropName}</Text>
-          <Text style={styles.txt}>
-            Fertilizer Name: {fertilizeDetails.fertilizerName}
-          </Text>
-          <Text style={styles.txt}>
-            Fertilizer Type: {fertilizeDetails.fertilizerType}
-          </Text>
-          <Text style={styles.txt}>
-            Fertilized Area: {fertilizeDetails.fertilizedArea}
-          </Text>
-          <Text style={styles.txt}>
-            Fertilized Date: {fertilizeDetails.fertilizedDate}
-          </Text>
+            <TouchableOpacity
+              style={styles.btncontainer}
+              onPress={() => onDeletePressed(fertilizeDetails.id)}>
+              <Image source={del} style={styles.image}></Image>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btncontainer} onPress={() => onDeletePressed(fertilizeDetails.id)}>
-            <Image source={del}   style={styles.image}></Image>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btncontainer2} onPress={() => onUpdatePressed(fertilizeDetails.id)}>
-            <Image source={ed}   style={styles.image2}></Image>
-          </TouchableOpacity>
-        </Pressable>
-      </View>
+            <TouchableOpacity
+              style={styles.btncontainer2}
+              onPress={() => onUpdatePressed(fertilizeDetails.id)}>
+              <Image source={ed} style={styles.image2}></Image>
+            </TouchableOpacity>
+          </Pressable>
+        </View>
       </ScrollView>
     </View>
   );
@@ -95,10 +97,9 @@ const styles = StyleSheet.create({
     left: 30,
     fontWeight: 'bold',
   },
-  new3:{
-    top:-320,
-    height:550
-
+  new3: {
+    top: -320,
+    height: 550,
   },
   container: {
     width: 310,
@@ -162,11 +163,11 @@ const styles = StyleSheet.create({
 
   image: {
     alignSelf: 'center',
-    top:12
+    top: 12,
   },
   image2: {
     alignSelf: 'center',
-    top:10
+    top: 10,
   },
   txt: {
     alignSelf: 'center',

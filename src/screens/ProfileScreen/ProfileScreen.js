@@ -497,31 +497,12 @@ const styles= StyleSheet.create({
 import React from "react";
 import{View,Text,Image,StyleSheet,TextInput, useWindowDimensions,Pressable, TouchableOpacity, ImageBackground, ScrollView} from "react-native";
 import CustomHeader from "../../components/CustomHeader";
-import harvest from '../../assets/images/harvest.png';
-import analysis from '../../assets/images/analysis.png';
-import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native-gesture-handler";
-import CustomBtn2 from "../../components/CustomBtn2"
-import { Button } from "react-native-elements/dist/buttons/Button";
-//import CustonBtnProfile from "../../"
-import CustonBtnProfile from "../../components/CustomBtnProfile/CustomBtnProfile";
 
 
 export default class ProfileScreen extends React.Component{
     
-    state = {
-        data:[]
-    }
-
-    fetchData = async()=>{
-        const response = await fetch('http://10.0.2.2:80/api/users.php')
-        const users = await response.json();
-        this.setState({data:users});
-
-    }
-    componentDidMount(){
-        this.fetchData();
-    }
+  
 
     onEditProfilePressed = () => {
         this.props.navigation.navigate('EditProfile');
@@ -533,42 +514,21 @@ export default class ProfileScreen extends React.Component{
                 <CustomHeader></CustomHeader>
                 <Text style={styles.text}>Profile</Text>
 
-                <FlatList
-                data={this.state.data}
-                keyExtractor={(item, index)=> index.toString()}
-                renderItem={({item}) =>
 
+ <ScrollView
+            contentContainerStyle={{
+              paddingBottom: 200
+            }}
+          >
+                
                 <View>
                     <View>
                     <View style={styles.container2}>
                     <View style={styles.containernew}>
                     <View style={{margin:0}}>
                     <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={() =>{}}>
-            <View style={{
-                height: 100,
-                width: 100,
-                borderRadius: 50,
-                //borderEndColor: '#000000',
-                //borderEndWidth: 3,
-                borderWidth: 3,
-                borderColor: '#BB8888',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-                <ImageBackground
-                source={{
-                    uri: 'https://www.imagetranslate.com/blog/content/images/size/w1000/2022/07/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-min.jpg',
-                }}
-                style={{height:150, width:150}}
-                imageStyle={{borderRadius: 100, borderWidth: 5, borderColor: '#BB8888'}}>
-
-
-                </ImageBackground>
-            </View>
-        </TouchableOpacity>
         
-        <Text style={styles.txt}>My registered phone number: {item.tel}</Text>
+        <Text style={styles.txt}>My registered phone number: </Text>
         <View>
         <Text style={styles.txt1}>UserID</Text>
         <Text style={styles.txt2}>FullName</Text>
@@ -586,31 +546,31 @@ export default class ProfileScreen extends React.Component{
 
 
         <View style={styles.cont}>
-        <Text style={styles.txt}>{item.userID}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont1}>
-        <Text style={styles.txt}>{item.fullName}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont2}>
-        <Text style={styles.txt}>{item.username}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont3}>
-        <Text style={styles.txt}>{item.password}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont4}>
-        <Text style={styles.txt}>{item.tel}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont5}>
-        <Text style={styles.txt}>{item.email}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont6}>
-        <Text style={styles.txt}>{item.address}</Text>
+        <Text style={styles.txt}></Text>
         </View>
 
         <TouchableOpacity style={styles.cont7} onPress={this.onEditProfilePressed}>
@@ -644,10 +604,9 @@ export default class ProfileScreen extends React.Component{
                     
 
                 </View>
+                </ScrollView>
 
-                }
-
-                />
+               
 
                 
 
@@ -723,7 +682,7 @@ const styles = StyleSheet.create({
         width:250,
         top:50,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -733,7 +692,7 @@ const styles = StyleSheet.create({
         width:250,
         top:60,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -742,7 +701,7 @@ const styles = StyleSheet.create({
         width:250,
         top:70,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -751,7 +710,7 @@ const styles = StyleSheet.create({
         width:250,
         top:80,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -760,7 +719,7 @@ const styles = StyleSheet.create({
         width:250,
         top:90,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -769,7 +728,7 @@ const styles = StyleSheet.create({
         width:250,
         top:100,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -778,7 +737,7 @@ const styles = StyleSheet.create({
         width:250,
         top:110,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -787,9 +746,9 @@ const styles = StyleSheet.create({
         width:250,
         top:150,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
-        backgroundColor:"#3BBD1A"
+        backgroundColor:"#FFA903"
 
 
     },
@@ -798,9 +757,9 @@ const styles = StyleSheet.create({
         width:250,
         top:170,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
-        backgroundColor:"#3BBD1A"
+        backgroundColor:"#FFA903"
 
     },
     column:{
@@ -856,7 +815,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#E4FFCA',
         width:'70%',
         borderRadius:20,
-        borderColor:'#3BBD1A',
+        borderColor:'#FFA903',
         borderWidth:3,
         position:"relative",
         top:50,

@@ -1,122 +1,23 @@
 import React from "react";
 import{View,Text,Image,StyleSheet,TextInput, useWindowDimensions,Pressable, TouchableOpacity, ImageBackground, ScrollView} from "react-native";
 import CustomHeader from "../../components/CustomHeader";
-import harvest from '../../assets/images/harvest.png';
-import analysis from '../../assets/images/analysis.png';
-import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native-gesture-handler";
-import CustomBtn2 from "../../components/CustomBtn2"
-import { Button } from "react-native-elements/dist/buttons/Button";
-//import CustonBtnProfile from "../../"
-import CustonBtnProfile from "../../components/CustomBtnProfile/CustomBtnProfile";
 
 
-export default class EditProfile extends React.Component{
+
+const EditProfile=() =>{
     
-    state = {
-        data:[]
-    }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            userID:'',
-            fullName: '',
-            username:'',
-            password : '',
-            tel:'',
-            email : '',
-            address:'',
-         
-         
-          
-          };
-       }
-
-       InsertRecord= async ()=>{
-        var userID = this.state.userID;
-        var fullName = this.state.fullName;
-        var username = this.state.username;
-        var password = this.state.password;
-        var tel = this.state.tel;
-        var email = this.state.email;
-        var address = this.state.address;
-       
-       
-
-        if((
-            userID.length==0 ||
-            fullName.length==0|| username.length==0|| password.length==0 ||tel.length==0 ||email.length==0 ||address.length==0 )){
-            alert("Required Field is Missing");
-        }
-
-        else{
-            var InsertAPIURL ="http://10.0.2.2:80/api/EditProfile.php"
-            
-            var headers={
-                'Accept':'application/json',
-                'Content-Type':'application.json'
-            }
-
-            var Data={
-                userID:userID,
-                fullName:fullName,
-                username:username,
-                password :password,
-                tel:tel,
-                email :email,
-
-                address:address,
-               
-           
-            }
-
-            fetch(InsertAPIURL,{
-                method:'POST',
-                headers :headers,
-                body:JSON.stringify(Data)
-            })
-            .then((response)=>response.json())
-            .then((response)=>{
-                alert(response[0].Message);       // If data is in JSON => Display alert msg
-                this.props.navigation.navigate("Sensor");
-              })
-
-              .catch((error)=>{
-                alert("Error Occured" + error);
-            })
-        
-    
-    
-    }
-
-       
-    }
-
-    fetchData = async()=>{
-        const response = await fetch('http://10.0.2.2:80/api/users.php')
-        const users = await response.json();
-        this.setState({data:users});
-
-    }
-    componentDidMount(){
-        this.fetchData();
-    }
-
-   /* onEditProfilePressed = () => {
-        this.props.navigation.navigate('Monitoring');
-      };*/
-
-    render(){
         return(
             <View>
                 <CustomHeader></CustomHeader>
                 <Text style={styles.text}>Edit Profile</Text>
 
-                <FlatList
-                data={this.state.data}
-                keyExtractor={(item, index)=> index.toString()}
-                renderItem={({item}) =>
+                <ScrollView
+            contentContainerStyle={{
+              paddingBottom: 200
+            }}
+          >
 
                 <View>
                     <View>
@@ -124,31 +25,9 @@ export default class EditProfile extends React.Component{
                     <View style={styles.containernew}>
                     <View style={{margin:0}}>
                     <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={() =>{}}>
-            <View style={{
-                height: 100,
-                width: 100,
-                borderRadius: 50,
-                //borderEndColor: '#000000',
-                //borderEndWidth: 3,
-                borderWidth: 3,
-                borderColor: '#BB8888',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-                <ImageBackground
-                source={{
-                    uri: 'https://www.imagetranslate.com/blog/content/images/size/w1000/2022/07/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-min.jpg',
-                }}
-                style={{height:150, width:150}}
-                imageStyle={{borderRadius: 100, borderWidth: 5, borderColor: '#BB8888'}}>
-
-
-                </ImageBackground>
-            </View>
-        </TouchableOpacity>
+                
         
-        <Text style={styles.txt}>My registered phone number: {item.tel}</Text>
+        <Text style={styles.txt}>My registered phone number: </Text>
         <View>
         <Text style={styles.txt1}>UserID</Text>
         <Text style={styles.txt2}>FullName</Text>
@@ -166,41 +45,41 @@ export default class EditProfile extends React.Component{
 
 
         <View style={styles.cont}>
-        <TextInput placeholder={item.userID} style={styles.input} onChangeText={userID=>this.setState({userID})}/>
-        <Text style={styles.txt}>{item.userID}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont1}>
-        <TextInput placeholder={item.fullName} style={styles.input} onChangeText={fullName=>this.setState({fullName})}/>
-        <Text style={styles.txt}>{item.fullName}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont2}>
-        <TextInput placeholder={item.username} style={styles.input} onChangeText={username=>this.setState({username})}/>
-        <Text style={styles.txt}>{item.username}</Text>
+        <TextInput placeholder="" style={styles.input}/>
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont3}>
-        <TextInput placeholder={item.password} style={styles.input} onChangeText={password=>this.setState({password})}/>
-        <Text style={styles.txt}>{item.password}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont4}>
-        <TextInput placeholder={item.tel} style={styles.input} onChangeText={tel=>this.setState({tel})}/>
-        <Text style={styles.txt}>{item.tel}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont5}>
-        <TextInput placeholder={item.email} style={styles.input} onChangeText={email=>this.setState({email})}/>
-        <Text style={styles.txt}>{item.email}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont6}>
-        <TextInput placeholder={item.address} style={styles.input} onChangeText={address=>this.setState({address})}/>
-        <Text style={styles.txt}>{item.address}</Text>
+        <TextInput placeholder="" style={styles.input} />
+        <Text style={styles.txt}></Text>
         </View>
 
-        <TouchableOpacity style={styles.cont7}  onPress={this.InsertRecord}
+        <TouchableOpacity style={styles.cont7} 
         //</View>onPress={this.onEditProfilePressed}
         >
         <Text style={styles.txt}>Edit Profile</Text>
@@ -234,9 +113,9 @@ export default class EditProfile extends React.Component{
 
                 </View>
 
-                }
+                </ScrollView>
 
-                />
+                
 
                 
 
@@ -245,7 +124,9 @@ export default class EditProfile extends React.Component{
         );
     }
 
-}
+
+
+
 
 const styles = StyleSheet.create({
     text:{
@@ -312,7 +193,7 @@ const styles = StyleSheet.create({
         width:250,
         top:50,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -322,7 +203,7 @@ const styles = StyleSheet.create({
         width:250,
         top:60,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -331,7 +212,7 @@ const styles = StyleSheet.create({
         width:250,
         top:70,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -340,7 +221,7 @@ const styles = StyleSheet.create({
         width:250,
         top:80,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -349,7 +230,7 @@ const styles = StyleSheet.create({
         width:250,
         top:90,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -358,7 +239,7 @@ const styles = StyleSheet.create({
         width:250,
         top:100,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -367,7 +248,7 @@ const styles = StyleSheet.create({
         width:250,
         top:110,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
         backgroundColor:"#E4FFCA"
     },
@@ -376,9 +257,9 @@ const styles = StyleSheet.create({
         width:250,
         top:150,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
-        backgroundColor:"#3BBD1A"
+        backgroundColor:"#FFA903"
 
 
     },
@@ -387,9 +268,9 @@ const styles = StyleSheet.create({
         width:250,
         top:170,
         borderRadius:50,
-        borderColor:"#3BBD1A",
+        borderColor:"#FFA903",
         borderWidth:3,
-        backgroundColor:"#3BBD1A"
+        backgroundColor:"#FFA903"
 
     },
     column:{
@@ -445,7 +326,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#E4FFCA',
         width:'70%',
         borderRadius:20,
-        borderColor:'#3BBD1A',
+        borderColor:'#FFA903',
         borderWidth:3,
         position:"relative",
         top:50,
@@ -555,4 +436,5 @@ const styles = StyleSheet.create({
 })
 
 
+export default EditProfile
 

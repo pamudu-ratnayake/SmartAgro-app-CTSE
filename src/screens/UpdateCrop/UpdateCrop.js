@@ -71,7 +71,7 @@ const UpdateCrop = ({route}) => {
       </View>
 
       <View style={styles.new}>
-      <Text style={styles.text1}>Crop</Text>
+      <Text style={styles.text1}>Enter Crop</Text>
       <View style={styles.container}>
         <TextInput
           placeholder=""
@@ -81,9 +81,9 @@ const UpdateCrop = ({route}) => {
             setCropName(text);
           }}
         />
-      
-</View>
-      <Text style={styles.text1}>Crop Details</Text>
+      </View>
+
+      <Text style={styles.text1}>Enter Crop Details</Text>
       <View style={styles.container}>
         <TextInput
           placeholder=""
@@ -98,7 +98,7 @@ const UpdateCrop = ({route}) => {
       <View style={{bottom: 50}}>
         <CustomButton text="Update" onPress={onSumbit}></CustomButton>
       </View></View>
-    </View>
+     </View>
   );
 };
 

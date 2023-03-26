@@ -61,11 +61,19 @@ const DelUpMyHarvest = ({route}) => {
           
       <View style={styles.column}>
         <Pressable style={styles.container}>
-        <Text style={styles.txt}>Crop Name: {harvest.cropName}</Text>
-            <Text style={styles.txt}>Date: {harvest.date}</Text>
-            <Text style={styles.txt}>Weight: {harvest.weight}</Text>
-            <Text style={styles.txt}>Description: {harvest.description}</Text>
+        <View>
+        <Text style={styles.txt}>Crop Name </Text>
+            <Text style={styles.txt}>Date </Text>
+            <Text style={styles.txt}>Weight </Text>
+            <Text style={styles.txt}>Description </Text>
+</View>
+<View>
+<Text style={styles.txtnew}>: {harvest.cropName}</Text>
+<Text style={styles.txtnew}>: {harvest.date}</Text>
+            <Text style={styles.txtnew}>: {harvest.weight}</Text>
+            <Text style={styles.txtnew}>: {harvest.description}</Text>
 
+</View>
           <TouchableOpacity style={styles.btncontainer} onPress={() => onDeletePressed(harvest.id)}>
             <Image source={del}   style={styles.image}></Image>
           </TouchableOpacity>
@@ -121,15 +129,22 @@ const styles = StyleSheet.create({
   btncontainer: {
     height: 60,
     width: 120,
-    top: 300,
+    top: 200,
     left: 10,
     backgroundColor: 'red',
     borderRadius: 20,
   },
+  txtnew:{
+    left:140,
+    top:-63,
+    color: 'black',
+    fontWeight: 'bold',
+
+  },
   btncontainer2: {
     height: 60,
     width: 120,
-    top: 240,
+    top: 140,
     left: 150,
     backgroundColor: 'green',
     borderRadius: 20,
@@ -166,9 +181,10 @@ const styles = StyleSheet.create({
     top:10
   },
   txt: {
-    alignSelf: 'center',
+    alignSelf:'flex-start',
     color: 'black',
-    top: 25,
+    top: 15,
+    left:20,
     fontWeight: 'bold',
   },
 
@@ -183,9 +199,9 @@ const styles = StyleSheet.create({
   txt3: {
     alignSelf: 'center',
     color: 'black',
-    top: 25,
+    top: -55,
     fontWeight: 'bold',
-    top: 35,
+   
   },
 });
 

@@ -1,7 +1,6 @@
 import { View, Text,ActivityIndicator} from 'react-native'
 import React, {useContext} from 'react'
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AuthStack from './AuthStack';
 import { AuthContext } from '../context/AuthContext';
 import TabNavigator from './TabNavigor';

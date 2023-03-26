@@ -67,10 +67,10 @@ const MyHarvest = () => {
             <Text style={styles.txt}>Description </Text>
             </View>
             <View>
-            <Text style={styles.txtnew}>: {harvest.cropName}</Text>
-            <Text style={styles.txtnew}>: {harvest.date}</Text>
-            <Text style={styles.txtnew}>: {harvest.weight}</Text>
-            <Text style={styles.txtnew}>: {harvest.description}</Text>
+            <Text style={styles.txtnew}>:  {harvest.cropName}</Text>
+            <Text style={styles.txtnew}>:  {harvest.date}</Text>
+            <Text style={styles.txtnew}>:  {harvest.weight}</Text>
+            <Text style={styles.txtnew}>:  {harvest.description}</Text>
 
             </View>
             </View>

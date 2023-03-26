@@ -32,8 +32,9 @@ const AddHarvest = () => {
       cropName,
       weight,
       date,
-      description,
-    };
+      description
+      
+    }
     push(usersRef, newData)
       .then(() => {
         navigation.navigate('Harvest');

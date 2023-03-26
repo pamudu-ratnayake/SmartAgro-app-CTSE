@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
-import CardView from 'react-native-cardview';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue} from 'firebase/database';
 
@@ -67,10 +66,10 @@ const MyHarvest = () => {
             <Text style={styles.txt}>Description </Text>
             </View>
             <View>
-            <Text style={styles.txtnew}>:   {harvest.cropName}</Text>
-            <Text style={styles.txtnew}>:   {harvest.date}</Text>
-            <Text style={styles.txtnew}>:   {harvest.weight}</Text>
-            <Text style={styles.txtnew}>:   {harvest.description}</Text>
+            <Text style={styles.txtnew}>:  {harvest.cropName}</Text>
+            <Text style={styles.txtnew}>:  {harvest.date}</Text>
+            <Text style={styles.txtnew}>:  {harvest.weight}</Text>
+            <Text style={styles.txtnew}>:  {harvest.description}</Text>
 
             </View>
             </View>
@@ -139,12 +138,12 @@ const styles = StyleSheet.create({
     alignSelf:'flex-start',
     color: 'black',
     top: 15,
-    left:30,
+    left:20,
     fontWeight: 'bold',
   },
   txtnew:{
-    left:180,
-    top:-68,
+    left:140,
+    top:-63,
     color: 'black',
     fontWeight: 'bold',
 

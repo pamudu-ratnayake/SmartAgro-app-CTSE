@@ -15,6 +15,8 @@ import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
 //import TabNavigator from './App';
 import TabNavigor from '../../src/navigation/TabNavigor';
 
+//code from https://github.com/itzpradip/react-navigation-v6-mix
+
 
 const Drawer = createDrawerNavigator();
 
@@ -53,7 +55,7 @@ const AppStack = () => {
         }}
       />
       <Drawer.Screen
-        name="Messages"
+        name="Message"
         component={MessagesScreen}
         options={{
           drawerIcon: ({color}) => (
@@ -62,7 +64,7 @@ const AppStack = () => {
         }}
       />
       <Drawer.Screen
-        name="Moments"
+        name="Moment"
         component={MomentsScreen}
         options={{
           drawerIcon: ({color}) => (

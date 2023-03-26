@@ -1,3 +1,5 @@
+// DelUpMyCrops
+
 import React, {useState} from 'react';
 import {
   View,
@@ -13,7 +15,6 @@ import {
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
-import CardView from 'react-native-cardview';
 import del from '../../../assets/images/del.png';
 import ed from '../../../assets/images/ed2.png';
 import {firebase} from '../../../firebase.config';
@@ -50,7 +51,7 @@ const DelUpMyCrops = ({route}) => {
     <View>
       <CustomHeader></CustomHeader>
       <View>
-        <Text style={styles.text}>MyCrops</Text>
+        <Text style={styles.text}>My Crops</Text>
       </View>
 
       <ScrollView

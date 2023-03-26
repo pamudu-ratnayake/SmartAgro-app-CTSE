@@ -17,6 +17,7 @@ import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, push} from 'firebase/database';
 import {useNavigation} from '@react-navigation/native';
 
+// database instance
 const db = getDatabase(firebase);
 const usersRef = ref(db, 'Orders');
 
@@ -27,6 +28,7 @@ const AddOrders = () => {
   const [orderAmount, setOrderAmount] = useState('');
   const [description, setDescription] = useState('');
 
+  //save order details
   const onSumbit = () => {
     const newData = {
       fertilizerType,
@@ -35,11 +37,11 @@ const AddOrders = () => {
     };
     push(usersRef, newData)
       .then(() => {
-        console.log('Data added successfully');
+        console.log('Order saved successfully');
         navigation.navigate('Orders');
       })
       .catch(error => {
-        console.error('Error adding data: ', error);
+        console.error('Order save failed: ', error);
       });
   };
 

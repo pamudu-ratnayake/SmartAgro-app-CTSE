@@ -30,6 +30,8 @@ import UpdateFertDetails from '../screens/UpdateFertilizer/UpdateFertilizer';
 import UpdateFertilizer from '../screens/UpdateFertilizer/UpdateFertilizer';
 import DelUpMyFert from '../screens/DelUpMyFert/DelUpMyFert';
 
+//reference tutorial from https://www.youtube.com/watch?v=ihfS3kEvH2o&t=11s
+
 const styles = StyleSheet.create({
   text:{
       fontSize:20,

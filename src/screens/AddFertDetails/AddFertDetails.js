@@ -138,16 +138,6 @@ const AddFertDetails = () => {
             />
           )}
         </View>
-        {/* <View style={styles.container}> */}
-        {/* <TextInput
-          placeholder=""
-          style={styles.input}
-          value={fertilizedDate}
-          onChangeText={text => {
-            setFertilizedDate(text);
-          }}
-        /> */}
-        {/* </View> */}
 
         <View style={{bottom: 50}}>
           <CustomButton text="Save" onPress={onSubmit}></CustomButton>

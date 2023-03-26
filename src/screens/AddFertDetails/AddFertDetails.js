@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   new3: {
     top: -320,
-    height: 450,
+    height: 550,
   },
 
   newnew3: {

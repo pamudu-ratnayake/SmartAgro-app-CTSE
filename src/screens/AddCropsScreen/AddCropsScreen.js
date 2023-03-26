@@ -72,7 +72,7 @@ const AddCropsScreen = () => {
       </View>
 
       <View style={{bottom: 50}}>
-        <CustomButton text="Add" onPress={onSumbit}></CustomButton>
+        <CustomButton text="Save" onPress={onSumbit}></CustomButton>
       </View>
       </View>
     </View>

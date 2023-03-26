@@ -6,7 +6,6 @@ import {
   StyleSheet,
   TextInput,
   Platform,
-  // DatePickerAndroid,
   TouchableOpacity,
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';

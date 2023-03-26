@@ -1,13 +1,11 @@
 import React from "react";
 import { View,Text,Image,StyleSheet ,useWindowDimensions,TextInput,Button, Pressable, TouchableOpacity} from "react-native";
-import MapView from 'react-native-maps';
 import CustomHeader from "../../components/CustomHeader";
 import farm from "../../../src/assets/images/farm.png";
-import crops from "../../../src/assets/images/crops.png"
 import yields from '../../../assets/images/yield.png';
+import crops from '../../../assets/images/fru.png';
+import controllers from '../../../assets/images/sho.png';
 import { useNavigation } from "@react-navigation/native";
-import CustomImageCarousalLandscape from "../../components/CustomImageCarousalLandscape";
-
 
 
 const HomePage=() =>{
@@ -17,36 +15,10 @@ const HomePage=() =>{
   }
 
   const onCropsPressed=() =>{
-    navigation.navigate('Yield');
+    navigation.navigate('Orders');
 }
-    const data = [
-      {
-        image: require('../../../src/assets/image-product-1.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-2.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-3.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-4.jpg'),
-      },
-    ];
-    const data2 = [
-      {
-        image: require('../../../src/assets/image-product-1-landscape.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-2-landscape.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-3-landscape.jpg'),
-      },
-      {
-        image: require('../../../src/assets/image-product-4-landscape.jpg'),
-      },
-    ];
+   
+   
     return (
       <View>
       
@@ -56,31 +28,23 @@ const HomePage=() =>{
      
         <View style={styles.carouselContainer}>
           <Text style={styles.textnew}>Welcome</Text>
-          <CustomImageCarousalLandscape data={data2} autoPlay={true} />
+          
          
         </View>
-         <View style={styles.containerMap}>
-            <MapView style={styles.map}
-            region={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.015,
-              longitudeDelta: 0.0121,
-            }}
-            ></MapView>
-          </View>
-          <Text style={styles.textnew2}>Your Crops</Text>
+      
+          <Text style={styles.textnew2}>Shortcuts</Text>
           <View style={styles.column}>
         <View style={styles.row}>
         
                   <TouchableOpacity  style={styles.containerC1} onPress={onFarmPressed} >
-                      <Image source={farm} style={styles.image}></Image>
-                      <Text style={styles.txt}>My Farm</Text>
+                      <Image source={crops} style={styles.image}></Image>
+                      <Text style={styles.txt}>Crops</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.containerC1} onPress={onCropsPressed} >
-                      <Image source={yields} style={styles.image}></Image>
-                      <Text style={styles.txt}>Yield</Text>
+                      <Image source={controllers} style={styles.image}></Image>
+                      <Text style={styles.txt}>Orders</Text>
                   </TouchableOpacity>
+                  
                   </View>
                   </View>
   
@@ -98,6 +62,7 @@ const HomePage=() =>{
         fontSize:20,
         color: 'black',
         left:30,
+        top:-350,
         fontWeight: 'bold',
         paddingTop: 10,
         paddingBottom: 10,
@@ -121,6 +86,7 @@ const HomePage=() =>{
         color: 'black',
         fontWeight: 'bold',
         paddingTop: 35,
+        top:-400,
         paddingBottom: 10,
         alignSelf:"center"
       },
@@ -128,6 +94,7 @@ const HomePage=() =>{
   row:{
       
     flex: 1,
+    top:-380,
     flexDirection: "row",
 
 },
@@ -135,7 +102,7 @@ containerC1:{
     width:100,
     height:100,
     borderRadius:20,
-    borderColor:"#73C971",
+    borderColor:"#FFA903",
     borderWidth:2,
     left:55,
     marginHorizontal:20,

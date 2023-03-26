@@ -1,10 +1,11 @@
 import React from "react";
 import { View,Image,Text,StyleSheet, Pressable, TouchableOpacity} from "react-native";
-import h_background from '../../../assets/images/h_background.png';
-import logo from '../../../assets/images/logo.png'
+import logo from '../../../assets/images/logo3.png'
 import { useNavigation } from "@react-navigation/native";
-import { DrawerActions } from 'react-navigation';
-import background from '../../../assets/images/background.png'
+import ff from '../../../assets/images/ff.jpg'
+import wing from '../../../assets/images/wing.png'
+
+
 
 //this.props.navigation.dispatch(DrawerActions.closeDrawer());
 //this.props.navigation.dispatch(DrawerActions.openDrawer());
@@ -14,14 +15,15 @@ const CustomHeader=() =>{
     return(
         <View>
             <View style={styles.backgroundContainer}>
-                <Image source={h_background} style={styles.image} />
+                <Image source={ff} style={styles.image} />
             </View>
             <View style={styles.overlay}>
                 <Image source={logo} styles={styles.lg} />
             </View>
-            <View style={styles.overlay2}>
-                <Image source={background} styles={styles.lg} />
+            <View>
+            <Image source={wing} style={styles.image2} />
             </View>
+            
 
             <TouchableOpacity style={styles.viewBack}>
             <Image source={require('../../../assets/images/bck.png')}
@@ -63,9 +65,17 @@ const styles = StyleSheet.create({
 
     image:{
         height:100,
+
         
         
         
+    },
+    image2:{
+      height:350,
+      top:150,
+      width:550,
+      opacity:0.2
+
     },
 
     overlay:{
@@ -74,6 +84,8 @@ const styles = StyleSheet.create({
     },
     lg:{
         alignSelf:"center",
+        //height:2
+        //height:"20"
 
     },
     viewTask: {

@@ -2,14 +2,10 @@ import React, {Component, useEffect, useState} from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
   useWindowDimensions,
   TextInput,
-  Button,
-  Pressable,
   ScrollView,
-  ImageBackground,
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import CustomButton from '../../components/CustomButton';

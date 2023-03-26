@@ -48,12 +48,6 @@ export default class CropsScreen extends React.Component {
             {/* <Text style={styles.txt}>Add Crops</Text> */}
           </Pressable>
           </View>
-
-          
-        
-        
-
-      
       </View>
 
       

@@ -16,9 +16,12 @@ import CardView from 'react-native-cardview';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue} from 'firebase/database';
 
+//database instance
 const db = getDatabase(firebase);
 const usersRef = ref(db, 'Orders');
 
+
+//implemented navigation
 const MyOrder = () => {
   const navigation = useNavigation();
 
@@ -40,7 +43,7 @@ const MyOrder = () => {
           }
         },
         error => {
-          console.log('Error fetching data: ', error);
+          console.log('Error during fetching: ', error);
         },
       );
     };

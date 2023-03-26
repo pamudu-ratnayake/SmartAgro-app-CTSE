@@ -16,6 +16,7 @@ import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue, child, update} from 'firebase/database';
 import {useNavigation} from '@react-navigation/native';
 
+//database instance
 const db = getDatabase(firebase);
 const usersRef = ref(db, 'Orders');
 
@@ -29,6 +30,7 @@ const UpdateOrders = ({route}) => {
   const [orderAmount, setOrderAmount] = useState('');
   const [description, setDescription] = useState('');
 
+  //save updated values
   const onSumbit = () => {
     const newData = {
       fertilizerType,

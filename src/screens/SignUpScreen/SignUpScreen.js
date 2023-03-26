@@ -35,7 +35,7 @@ const SignUpScreen = () => {
           Alert.alert('Error', error.message);
         });
     } else {
-      Alert.alert('Error', 'Passwords do not match.');
+      Alert.alert('Error', 'Passwords do not match. Please try again!');
     }
   };
 

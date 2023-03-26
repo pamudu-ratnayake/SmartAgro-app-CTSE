@@ -55,7 +55,7 @@ const AppStack = () => {
         }}
       />
       <Drawer.Screen
-        name="Messages"
+        name="Message"
         component={MessagesScreen}
         options={{
           drawerIcon: ({color}) => (
@@ -64,7 +64,7 @@ const AppStack = () => {
         }}
       />
       <Drawer.Screen
-        name="Moments"
+        name="Moment"
         component={MomentsScreen}
         options={{
           drawerIcon: ({color}) => (

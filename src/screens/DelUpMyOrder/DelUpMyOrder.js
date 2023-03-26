@@ -19,6 +19,7 @@ import CardView from 'react-native-cardview';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue, child, remove} from 'firebase/database';
 
+//database instance
 const db = getDatabase(firebase);
 const usersRef = ref(db, 'Orders');
 
@@ -26,9 +27,12 @@ const DelUpMyOrder = ({route}) => {
   const navigation = useNavigation();
   const order = route.params;
 
+  //set navigations
   const onUpdatePressed = id => {
     navigation.navigate('UpOrders', {orderId: id});
   };
+
+  //remove from database
 
   const onDeletePressed = (id) => {
     const nodeRef = ref(db, `Orders/${id}`);

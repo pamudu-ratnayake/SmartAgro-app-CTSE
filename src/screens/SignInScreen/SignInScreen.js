@@ -27,7 +27,7 @@ const SignInScreen = () => {
   };
 
   const SignInPressed = () => {
-    signInWithEmailAndPassword(auth, email, password) 
+    signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
         navigation.navigate('App');
@@ -37,7 +37,6 @@ const SignInScreen = () => {
         const errorMessage = error.message;
         Alert.alert('Error', error.message);
       });
-
   };
 
   return (
@@ -51,6 +50,7 @@ const SignInScreen = () => {
           onChangeText={text => setEmail(text)}
         />
       </View>
+
       <View style={styles.container}>
         <TextInput
           placeholder="Password"

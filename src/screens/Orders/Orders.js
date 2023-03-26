@@ -14,6 +14,7 @@ import harvest from '../../../assets/images/ad.png';
 import order from '../../../assets/images/cho.png';
 import {useNavigation} from '@react-navigation/native';
 
+//add navigation
 const Orders = () => {
   const navigation = useNavigation();
 

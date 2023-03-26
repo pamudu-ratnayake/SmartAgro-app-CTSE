@@ -5,9 +5,6 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  useWindowDimensions,
-  TextInput,
-  Button,
   Pressable,
   TouchableOpacity,
 } from 'react-native';
@@ -15,7 +12,6 @@ import CustomHeader from '../../components/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
 import del from '../../../assets/images/del.png';
 import ed from '../../../assets/images/ed2.png';
-import CardView from 'react-native-cardview';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue, child, remove} from 'firebase/database';
 

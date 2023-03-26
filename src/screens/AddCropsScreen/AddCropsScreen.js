@@ -47,7 +47,7 @@ const AddCropsScreen = () => {
         <Text style={styles.text}>Add Crops</Text>
       </View>
       <View style={styles.con}>
-      <Text style={styles.text1}>Crop Name</Text>
+      <Text style={styles.text1}>Enter Crop Name</Text>
       <View style={styles.container}>
         <TextInput
           placeholder=""
@@ -59,7 +59,7 @@ const AddCropsScreen = () => {
         />
       </View>
 
-      <Text style={styles.text1}>Crop Details</Text>
+      <Text style={styles.text1}>Enter Crop Details</Text>
       <View style={styles.container}>
         <TextInput
           placeholder=""

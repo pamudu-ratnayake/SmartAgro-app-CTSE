@@ -1,7 +1,6 @@
 import React from "react";
 import{View,Text,Image,StyleSheet,TextInput, useWindowDimensions,Pressable, TouchableOpacity, ImageBackground, ScrollView} from "react-native";
 import CustomHeader from "../../components/CustomHeader";
-import { FlatList } from "react-native-gesture-handler";
 
 
 

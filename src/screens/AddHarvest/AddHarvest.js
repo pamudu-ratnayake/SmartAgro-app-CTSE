@@ -57,7 +57,7 @@ const AddHarvest = () => {
       <Text style={styles.text1}>Crop</Text>
       <View style={styles.container}>
         <TextInput
-          placeholder=""
+          placeholder="Enter crop"
           style={styles.input}
           value={cropName}
           onChangeText={text => {
@@ -69,7 +69,7 @@ const AddHarvest = () => {
       <Text style={styles.text1}>Crop Weight</Text>
       <View style={styles.container}>
         <TextInput
-          placeholder=""
+          placeholder="Enter crop weight"
           style={styles.input}
           value={weight}
           onChangeText={text => {
@@ -81,7 +81,7 @@ const AddHarvest = () => {
       <Text style={styles.text1}>Date</Text>
       <View style={styles.container}>
         <TextInput
-          placeholder=""
+          placeholder="Enter Date"
           style={styles.input}
           value={date}
           onChangeText={text => {
@@ -93,7 +93,7 @@ const AddHarvest = () => {
       <Text style={styles.text1}>Description</Text>
       <View style={styles.container}>
         <TextInput
-          placeholder=""
+          placeholder="Enter Description"
           style={styles.input}
           value={description}
           onChangeText={text => {

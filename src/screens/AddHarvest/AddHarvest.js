@@ -33,6 +33,7 @@ const AddHarvest = () => {
       weight,
       date,
       description
+      
     }
     push(usersRef, newData)
       .then(() => {

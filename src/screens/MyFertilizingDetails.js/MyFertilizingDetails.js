@@ -25,6 +25,7 @@ const MyFertilizingDetails = () => {
 
   const [fertilizingData, setFertilizingData] = useState([]);
 
+  //navigate
   const onPressed = ferData => {
     navigation.navigate('DelFert', ferData);
   };
@@ -50,8 +51,6 @@ const MyFertilizingDetails = () => {
     };
     fetchData();
   }, []);
-
-  //Flatlist should be implemented
 
   return (
     <View>

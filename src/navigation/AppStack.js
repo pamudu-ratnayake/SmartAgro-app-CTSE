@@ -15,6 +15,8 @@ import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
 //import TabNavigator from './App';
 import TabNavigor from '../../src/navigation/TabNavigor';
 
+//code from https://github.com/itzpradip/react-navigation-v6-mix
+
 
 const Drawer = createDrawerNavigator();
 

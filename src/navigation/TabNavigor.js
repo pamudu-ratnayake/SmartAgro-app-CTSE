@@ -278,13 +278,6 @@ const HomeStack = () => {
         component={UpdateOrders}
         options={{headerShown: false}}
       />
-   {  /* <Stack.Screen
-        name="GameDetails"
-        component={GameDetailsScreen}
-        options={({route}) => ({
-          title: route.params?.title,
-        })}
-      />*/}
     </Stack.Navigator>
   );
 };

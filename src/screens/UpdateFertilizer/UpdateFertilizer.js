@@ -2,14 +2,10 @@ import React, {Component, useEffect, useState} from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
   useWindowDimensions,
   TextInput,
-  Button,
-  Pressable,
   ScrollView,
-  ImageBackground,
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import CustomButton from '../../components/CustomButton';
@@ -41,11 +37,11 @@ const UpdateFertilizer = ({route}) => {
     };
     update(child(usersRef, fertilizedId), newData)
       .then(() => {
-        console.log('Data Updated successfully');
+        console.log('Data Updated successfully!');
         navigation.navigate("MyFert");
       })
       .catch(error => {
-        console.error('Error adding data: ', error);
+        console.error('Error on adding data: ', error);
       });
   };
 
@@ -166,7 +162,7 @@ const styles = StyleSheet.create({
   },
   new3:{
     top:-320,
-    height:450
+    height:550
 
   },
 

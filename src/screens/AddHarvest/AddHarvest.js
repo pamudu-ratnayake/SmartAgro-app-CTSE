@@ -14,13 +14,13 @@ import CustomHeader from '../../components/CustomHeader';
 import CustomButton from '../../components/CustomButton';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, push} from 'firebase/database';
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from '@react-navigation/native';
 
 const db = getDatabase(firebase);
 const usersRef = ref(db, 'Harvest');
 
 const AddHarvest = () => {
-  const navigation =useNavigation();
+  const navigation = useNavigation();
 
   const [cropName, setCropName] = useState('');
   const [weight, setWeight] = useState('');
@@ -37,11 +37,10 @@ const AddHarvest = () => {
     }
     push(usersRef, newData)
       .then(() => {
-        console.log("Data added successfully");
-        navigation.navigate("Harvest");
+        navigation.navigate('Harvest');
       })
-      .catch((error) => {
-        console.error("Error adding data: ", error);
+      .catch(error => {
+        console.error('Error adding data: ', error);
       });
   };
 
@@ -52,60 +51,58 @@ const AddHarvest = () => {
         <Text style={styles.text}>Add Harvest</Text>
       </View>
 
-
-
       <View style={styles.new1}>
-      <Text style={styles.text1}>Crop</Text>
-      <View style={styles.container}>
-        <TextInput
-          placeholder="Enter crop"
-          style={styles.input}
-          value={cropName}
-          onChangeText={text => {
-            setCropName(text);
-          }}
-        />
-      </View>
+        <Text style={styles.text1}>Crop</Text>
+        <View style={styles.container}>
+          <TextInput
+            placeholder=""
+            style={styles.input}
+            value={cropName}
+            onChangeText={text => {
+              setCropName(text);
+            }}
+          />
+        </View>
 
-      <Text style={styles.text1}>Crop Weight</Text>
-      <View style={styles.container}>
-        <TextInput
-          placeholder="Enter crop weight"
-          style={styles.input}
-          value={weight}
-          onChangeText={text => {
-            setWeight(text);
-          }}
-        />
-      </View>
+        <Text style={styles.text1}>Crop Weight</Text>
+        <View style={styles.container}>
+          <TextInput
+            placeholder=""
+            style={styles.input}
+            value={weight}
+            onChangeText={text => {
+              setWeight(text);
+            }}
+          />
+        </View>
 
-      <Text style={styles.text1}>Date</Text>
-      <View style={styles.container}>
-        <TextInput
-          placeholder="Enter Date"
-          style={styles.input}
-          value={date}
-          onChangeText={text => {
-            setDate(text);
-          }}
-        />
-      </View>
+        <Text style={styles.text1}>Date</Text>
+        <View style={styles.container}>
+          <TextInput
+            placeholder=""
+            style={styles.input}
+            value={date}
+            onChangeText={text => {
+              setDate(text);
+            }}
+          />
+        </View>
 
-      <Text style={styles.text1}>Description</Text>
-      <View style={styles.container}>
-        <TextInput
-          placeholder="Enter Description"
-          style={styles.input}
-          value={description}
-          onChangeText={text => {
-            setDescription(text);
-          }}
-        />
-      </View>
+        <Text style={styles.text1}>Description</Text>
+        <View style={styles.container}>
+          <TextInput
+            placeholder=""
+            style={styles.input}
+            value={description}
+            onChangeText={text => {
+              setDescription(text);
+            }}
+          />
+        </View>
 
-      <View style={{bottom: 50}}>
-        <CustomButton text="Save" onPress={onSubmit}></CustomButton>
-      </View>
+        <View style={{bottom: 50}}>
+          <CustomButton text="Save" onPress={onSubmit}></CustomButton>
+        </View>
       </View>
     </View>
   );
@@ -119,9 +116,8 @@ const styles = StyleSheet.create({
     left: 30,
     fontWeight: 'bold',
   },
-  new1:{
-    top:-350
-
+  new1: {
+    top: -350,
   },
 
   text1: {

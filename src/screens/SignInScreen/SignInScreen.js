@@ -29,19 +29,14 @@ const SignInScreen = () => {
   const SignInPressed = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        // Signed in
         const user = userCredential.user;
-        console.log('user is ==>', user);
         navigation.navigate('App');
-        // ...
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
         Alert.alert('Error', error.message);
       });
-
-    // navigation.navigate('App');
   };
 
   return (
@@ -55,6 +50,7 @@ const SignInScreen = () => {
           onChangeText={text => setEmail(text)}
         />
       </View>
+
       <View style={styles.container}>
         <TextInput
           placeholder="Password"

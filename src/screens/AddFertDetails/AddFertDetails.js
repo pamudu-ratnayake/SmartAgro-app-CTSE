@@ -4,13 +4,8 @@ import {
   Text,
   Image,
   StyleSheet,
-  useWindowDimensions,
   TextInput,
-  Button,
-  Pressable,
-  ImageBackground,
   Platform,
-  // DatePickerAndroid,
   TouchableOpacity,
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
@@ -138,16 +133,6 @@ const AddFertDetails = () => {
             />
           )}
         </View>
-        {/* <View style={styles.container}> */}
-        {/* <TextInput
-          placeholder=""
-          style={styles.input}
-          value={fertilizedDate}
-          onChangeText={text => {
-            setFertilizedDate(text);
-          }}
-        /> */}
-        {/* </View> */}
 
         <View style={{bottom: 50}}>
           <CustomButton text="Save" onPress={onSubmit}></CustomButton>
@@ -167,7 +152,7 @@ const styles = StyleSheet.create({
   },
   new3: {
     top: -320,
-    height: 450,
+    height: 550,
   },
 
   newnew3: {

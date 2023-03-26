@@ -15,8 +15,9 @@ const EditProfile=() =>{
 
                 <ScrollView
             contentContainerStyle={{
-              paddingBottom: 200
+              paddingBottom: 150
             }}
+            style={styles.new3}
           >
 
                 <View>
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     text:{
         fontSize:25,
         color:"black",
-        top:20,
+        top:-320,
         left:30,
         fontWeight:"bold"
         
@@ -145,6 +146,12 @@ const styles = StyleSheet.create({
   
 
     },
+    new3:{
+        top:-320,
+        height:550
+    
+      },
+    
     txt2:{
         left:-160,
        top:120,

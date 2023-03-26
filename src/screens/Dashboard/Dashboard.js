@@ -21,6 +21,7 @@ import {useNavigation} from '@react-navigation/native';
 const Dashboard = () => {
   const navigation = useNavigation();
 
+  //navigations
   const onFarmPressed = () => {
     navigation.navigate('MyFarm');
   };

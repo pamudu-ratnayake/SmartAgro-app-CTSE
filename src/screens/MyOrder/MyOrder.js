@@ -43,7 +43,7 @@ const MyOrder = () => {
           }
         },
         error => {
-          console.log('Error fetching data: ', error);
+          console.log('Error during fetching: ', error);
         },
       );
     };

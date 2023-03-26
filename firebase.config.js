@@ -23,15 +23,4 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const auth = getAuth(firebase);
 
-// let analytics;
-// // const analytics = getAnalytics(app);
-
-// if (getAnalytics.isSupported()) {
-//     analytics = getAnalytics(firebase);
-//   // your analytics code here
-// } else {
-//   console.warn("Firebase Analytics is not supported in this environment.");
-// }
-
-// export { firebase, analytics };
 export { firebase, auth };

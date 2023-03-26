@@ -41,11 +41,11 @@ const UpdateFertilizer = ({route}) => {
     };
     update(child(usersRef, fertilizedId), newData)
       .then(() => {
-        console.log('Data Updated successfully');
+        console.log('Data Updated successfully!');
         navigation.navigate("MyFert");
       })
       .catch(error => {
-        console.error('Error adding data: ', error);
+        console.error('Error on adding data: ', error);
       });
   };
 

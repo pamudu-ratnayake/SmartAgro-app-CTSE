@@ -60,7 +60,7 @@ const MyCrops = () => {
       <CustomHeader></CustomHeader>
 
       <View>
-        <Text style={styles.text}>MyCrops</Text>
+        <Text style={styles.text}>My Crops</Text>
       </View>
       <SafeAreaView>
         <View style={styles.column}>
@@ -72,7 +72,7 @@ const MyCrops = () => {
               <View>
                 <View>
                   <Text style={styles.txt}>Crop Name </Text>
-                  <Text style={styles.txt}>Description </Text>
+                  <Text style={styles.txt}>Crop Description </Text>
                 </View>
                 <View>
                   <Text style={styles.txtnew}>: {crop.cropName}</Text>

@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
-import CardView from 'react-native-cardview';
 import {firebase} from '../../../firebase.config';
 import {getDatabase, ref, onValue} from 'firebase/database';
 

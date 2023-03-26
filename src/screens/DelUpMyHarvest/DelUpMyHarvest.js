@@ -49,7 +49,7 @@ const DelUpMyHarvest = ({route}) => {
     <View>
       <CustomHeader></CustomHeader>
       <View>
-        <Text style={styles.text}>My Harvest</Text>
+        <Text style={styles.text}>My Harvest </Text>
       </View>
 
       <ScrollView

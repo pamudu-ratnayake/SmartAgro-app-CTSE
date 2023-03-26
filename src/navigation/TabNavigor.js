@@ -5,7 +5,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Dashboard from '../screens/Dashboard';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomePage from '../screens/HomePage/HomePage';
-
+import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
+import EditProfile from '../screens/EditProfile/EditProfile';
 
 const styles = StyleSheet.create({
   text:{
@@ -223,7 +224,21 @@ const HomeStack = () => {
 };
 
 
+const ProfileStack = () =>{
+  return(
+    <Stack.Navigator>
+      <Stack.Screen
+      name="Profile"
+      component={ProfileScreen}
+      options={{headerShown:false}}/>
 
+<Stack.Screen
+      name="EditProfile"
+      component={EditProfile}
+      options={{headerShown:false}}/>
+    </Stack.Navigator>
+  )
+}
 
 
 
@@ -307,6 +322,7 @@ const TabNavigator = () => {
         }}>
       <Tab.Screen name="Home" component={HomeStack} options={navOptionHandler} />
       <Tab.Screen name="Dashboard" component={DashboardStack} options={navOptionHandler}/>
+      <Tab.Screen name="Profile" component={ProfileStack} options={navOptionHandler}/>
     </Tab.Navigator>
   );
 }

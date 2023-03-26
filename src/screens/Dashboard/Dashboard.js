@@ -12,7 +12,23 @@ import { useNavigation } from "@react-navigation/native";
 const Dashboard=() =>{
     const navigation =useNavigation();
 
-   
+    const onFarmPressed=() =>{
+        navigation.navigate('MyFarm');
+    }
+
+    const onHarvestPressed=() =>{
+        navigation.navigate('Harvest');
+    }
+    
+    const onOrdersPressed=() =>{
+        navigation.navigate('Orders');
+    }
+    
+    const onFertilizerPressed=() =>{
+        navigation.navigate('Firt');
+    }
+    
+
     
     return(
         <View>
@@ -25,11 +41,11 @@ const Dashboard=() =>{
             <View style={styles.column}>
             
             <View style={styles.row}>
-                <Pressable  style={styles.container}>
+                <Pressable onPress={onFarmPressed} style={styles.container}>
                     <Image source={crops} style={styles.image}></Image>
                     <Text style={styles.txt}>Crops</Text>
                 </Pressable>
-                <Pressable style={styles.container} >
+                <Pressable onPress={onHarvestPressed} style={styles.container} >
                     <Image source={farm} style={styles.image}></Image>
                     <Text style={styles.txt}>Harvest</Text>
                 </Pressable>
@@ -38,11 +54,11 @@ const Dashboard=() =>{
 
             <View style={styles.row}>
 
-                <Pressable style={styles.container2}>
+                <Pressable onPress={onOrdersPressed} style={styles.container2}>
                     <Image source={controllers} style={styles.image}></Image>
                     <Text style={styles.txt}>Orders</Text>
                 </Pressable>
-                <Pressable  style={styles.container2}>
+                <Pressable onPress={onFertilizerPressed} style={styles.container2}>
                     <Image source={yields} style={styles.image}></Image>
                     <Text style={styles.txt}>Fertilizing Details</Text>
                 </Pressable>

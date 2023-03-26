@@ -1,39 +1,32 @@
-
-
 import React from "react";
 import{View,Text,Image,StyleSheet,TextInput, useWindowDimensions,Pressable, TouchableOpacity, ImageBackground, ScrollView} from "react-native";
 import CustomHeader from "../../components/CustomHeader";
 import { FlatList } from "react-native-gesture-handler";
 
 
-export default class ProfileScreen extends React.Component{
+
+const EditProfile=() =>{
     
-  
 
-    onEditProfilePressed = () => {
-        this.props.navigation.navigate('EditProfile');
-      };
-
-    render(){
         return(
             <View>
                 <CustomHeader></CustomHeader>
-                <Text style={styles.text}>Profile</Text>
+                <Text style={styles.text}>Edit Profile</Text>
 
-
- <ScrollView
+                <ScrollView
             contentContainerStyle={{
-              paddingBottom: 200
+              paddingBottom: 150
             }}
             style={styles.new}
           >
-                
-                <View >
+
+                <View>
                     <View>
                     <View style={styles.container2}>
                     <View style={styles.containernew}>
                     <View style={{margin:0}}>
                     <View style={{alignItems: 'center'}}>
+                
         
         <Text style={styles.txt}>My registered phone number: </Text>
         <View>
@@ -53,34 +46,43 @@ export default class ProfileScreen extends React.Component{
 
 
         <View style={styles.cont}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont1}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont2}>
+        <TextInput placeholder="" style={styles.input}/>
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont3}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont4}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont5}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
         <View style={styles.cont6}>
+        <TextInput placeholder="" style={styles.input} />
         <Text style={styles.txt}></Text>
         </View>
 
-        <TouchableOpacity style={styles.cont7} onPress={this.onEditProfilePressed}>
+        <TouchableOpacity style={styles.cont7} 
+        //</View>onPress={this.onEditProfilePressed}
+        >
         <Text style={styles.txt}>Edit Profile</Text>
         </TouchableOpacity>
 
@@ -111,9 +113,10 @@ export default class ProfileScreen extends React.Component{
                     
 
                 </View>
+
                 </ScrollView>
 
-               
+                
 
                 
 
@@ -122,7 +125,9 @@ export default class ProfileScreen extends React.Component{
         );
     }
 
-}
+
+
+
 
 const styles = StyleSheet.create({
     text:{
@@ -133,10 +138,6 @@ const styles = StyleSheet.create({
         fontWeight:"bold"
         
     },
-    new: {
-        top: -320,
-        height: 550,
-      },
     txt1:{
         left:-160,
        top:80,
@@ -153,6 +154,10 @@ const styles = StyleSheet.create({
    
 
     },
+    new: {
+        top: -320,
+        height: 550,
+      },
     txt3:{
         left:-160,
        top:160,
@@ -436,5 +441,5 @@ const styles = StyleSheet.create({
 })
 
 
-
+export default EditProfile
 
